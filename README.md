@@ -17,18 +17,22 @@
     under the License.
 -->
 
+My changes:
+* getImage() was originally looking for the (asset) files in the **/platform/\*\*/www/** folder. However, my setup (Ionic4 + Capacitor) copies the content of the **/www** folder to **/platform/\*\*/public/**, so I changed that.
+
+Plans:
+* When I have some time I'll update the example bellow to match the curernt state of the app. Mainly the ThemeableBrowser doesn't contain `addEventListener(eventName: string, callback: Function)` methods anymore. Instead it uses `on(eventName: string): Observable<any>`.
+
 cordova-plugin-themeablebrowser
 ===============================
-
-**This repo is out of maintenance** due to its original mainteners are no longer able to maintain it in an acceptable fashion. Please consider forking this repo if it interests you. Apologies to everyone who still depends on this repo and thanks to everyone who has contributed.
-
+> **This repo is out of maintenance** due to its original mainteners are no longer able to maintain it in an acceptable fashion. Please consider forking this repo if it interests you. Apologies to everyone who still depends on this repo and thanks to everyone who has contributed.
 ---
 
-This plugin is a fork of [org.apache.cordova.inappbrowser](https://github.com/apache/cordova-plugin-inappbrowser). It attempts to retain most of the features of the InAppBrowser. In fact, for the full list of features inherited from InAppBrowser, please refer to [InAppBrowser's documentation](https://github.com/apache/cordova-plugin-inappbrowser/blob/master/README.md).
+> This plugin is a fork of [org.apache.cordova.inappbrowser](https://github.com/apache/cordova-plugin-inappbrowser). It attempts to retain most of the features of the InAppBrowser. In fact, for the full list of features inherited from InAppBrowser, please refer to [InAppBrowser's documentation](https://github.com/apache/cordova-plugin-inappbrowser/blob/master/README.md).
 
-The purpose of this plugin is to provide an in-app-browser that can also be configured to match the theme of your app, in order to give it a more immersive look and feel for your app, as well as provide a more consistent look and feel across platforms.
+> The purpose of this plugin is to provide an in-app-browser that can also be configured to match the theme of your app, in order to give it a more immersive look and feel for your app, as well as provide a more consistent look and feel across platforms.
 
-This plugin launches an in-app web view on top the existing [CordovaWebView](https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaWebView.java) by calling `cordova.ThemeableBrowser.open()`.
+> This plugin launches an in-app web view on top the existing [CordovaWebView](https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaWebView.java) by calling `cordova.ThemeableBrowser.open()`.
 
     // Keep in mind that you must add your own images to native resource.
     // Images below are for sample only. They are not imported by this plugin.
